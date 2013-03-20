@@ -11,7 +11,7 @@
 @interface LZOptionViewController : UIViewController <RenrenDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *optionArray;
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *viewControllers;
 @property (nonatomic, strong) UIViewController *viewController;
 

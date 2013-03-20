@@ -27,6 +27,8 @@
         if (self.optionViewController == nil) {
             self.optionViewController = [[[LZOptionViewController alloc] init] autorelease];
             [self.navigationController pushViewController:self.optionViewController animated:YES];
+        } else {
+            [self.navigationController pushViewController:self.optionViewController animated:YES];
         }
     }
 	// Do any additional setup after loading the view, typically from a nib.
@@ -41,8 +43,10 @@
 - (IBAction)userLogin:(id)sender{
     if (![[Renren sharedRenren] isSessionValid]) {
         [[Renren sharedRenren] authorizationInNavigationWithPermisson:nil andDelegate:self];
-        if (self.optionViewController== nil){
+        if (self.optionViewController == nil){
             self.optionViewController = [[[LZOptionViewController alloc] init] autorelease];
+            [self.navigationController pushViewController:self.optionViewController animated:YES];
+        } else {
             [self.navigationController pushViewController:self.optionViewController animated:YES];
         }
     } else {

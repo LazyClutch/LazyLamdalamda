@@ -8,6 +8,7 @@
 
 #import "LZFriendViewController.h"
 #import "pinyin.h"
+#import "NSDictionary+MutableDeepCopy.h"
 
 @interface LZFriendViewController ()
 
@@ -29,13 +30,15 @@
     [super viewDidLoad];
     self.navigationItem.title = @"好友列表";
     [self getFriendsList];
-
+    //[self.tableView setContentOffset:CGPointMake(0.0, 44.0) animated:NO];
+    [self.tableView reloadData];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    [self.tableView setContentOffset:CGPointMake(0.0, 44.0) animated:NO];
+    [self.tableView reloadData];
 //    NSString *name = self.friendsArray.name;
 //    self.navigationController.title = name;
 //    NSURL *headUrl = [NSURL URLWithString:self.friendsArray.headUrl];
@@ -44,10 +47,28 @@
 //    self.imageView.image = headImage;
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    self.friendsDictionary = nil;
+    self.friendsList = nil;
+    self.tableView = nil;
+    self.friendKeys = nil;
+    self.friendsArray = nil;
+    self.searchBar = nil;
+    self.names = nil;
+    self.keys = nil;
+    [super dealloc];
+}
+
 - (void)getFriendsList{
     if ([[Renren sharedRenren] isSessionValid]) {
         ROGetFriendsInfoRequestParam *requestParam = [[[ROGetFriendsInfoRequestParam alloc] init] autorelease];
-        requestParam.count = @"500";
+        requestParam.count = @"1000";
         requestParam.page = @"1";
         requestParam.fields = @"name";
         [[Renren sharedRenren] getFriendsInfo:requestParam andDelegate:self];
@@ -55,12 +76,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"认证失败" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)renren:(Renren *)renren requestDidReturnResponse:(ROResponse *)response{
@@ -87,6 +102,7 @@
 - (void)processData{
     NSArray *array = [[self.friendKeys allKeys] sortedArrayUsingSelector:@selector(compare:)];
     self.keys = array;
+    self.keysForSearch = [array mutableCopy];
     [self.friendKeys removeAllObjects];
     NSMutableDictionary *friendKeys = [[[NSMutableDictionary alloc] init] autorelease];
     for (NSString *key in self.keys) {
@@ -103,51 +119,48 @@
         [friendKeys setObject:keyArray forKey:firstLetterStr];
     }
     self.friendKeys = friendKeys;
+    [self resetSearch];
+
 }
 
-- (void)dealloc {
-    [_imageView release];
-    self.friendsDictionary = nil;
-    self.friendsList = nil;
-    self.tableView = nil;
-    [super dealloc];
-}
+#pragma mark-
+#pragma mark Table View Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (self.friendKeys == nil) {
+    if (self.names == nil) {
         return 0;
     }
-    NSArray* array = [self.friendKeys objectForKey:[self.keys objectAtIndex:section]];
+    NSArray* array = [self.names objectForKey:[self.keysForSearch objectAtIndex:section]];
     return [array count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if (self.keys == nil) {
-        return 0;
+    if (self.keysForSearch == nil) {
+        return 1;
     }
-    return [self.keys count];
+    return [self.keysForSearch count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (self.keys == nil) {
+    if (self.keysForSearch == nil) {
         return nil;
     }
-    return [self.keys objectAtIndex:section];
+    return [self.keysForSearch objectAtIndex:section];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
-    if (self.keys == nil) {
+    if (self.keysForSearch == nil) {
         return nil;
     }
-    return self.keys;
+    return self.keysForSearch;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *FriendsListCellIdentifier = @"FriendsListCellIdentifier";
     NSUInteger section = [indexPath section];
     NSUInteger row = [indexPath row];
-    NSString *key = [self.keys objectAtIndex:section];
-    NSArray *names = [self.friendKeys objectForKey:key];
+    NSString *key = [self.keysForSearch objectAtIndex:section];
+    NSArray *names = [self.names objectForKey:key];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FriendsListCellIdentifier];
     if (cell == nil) {
@@ -156,6 +169,58 @@
     cell.textLabel.text = [[names objectAtIndex:row] name];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return cell;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.searchBar resignFirstResponder];
+    return indexPath;
+}
+
+#pragma mark SearchBar Methods
+
+- (void)resetSearch{
+    self.names = [self.friendKeys mutableDeepCopy];
+    NSArray *array = [[self.friendKeys allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    self.keysForSearch = [array mutableCopy];
+}
+
+- (void)handleSearchForItem:(NSString *)item{
+    NSMutableArray *sectionsToRemove = [[[NSMutableArray alloc] init] autorelease];
+    [self resetSearch];
+    
+    for (NSString *key in self.keysForSearch) {
+        NSMutableArray *array = [self.names valueForKey:key];
+        NSMutableArray *toRemove = [[[NSMutableArray alloc] init] autorelease];
+        for (ROFriendResponseItem *friendItem in array) {
+            NSString *name = friendItem.name;
+            if ([name rangeOfString:item options:NSCaseInsensitiveSearch].location == NSNotFound) {
+                [toRemove addObject:friendItem];
+            }
+        }
+        if ([array count] == [toRemove count]) {
+            [sectionsToRemove addObject:key];
+        }
+        [array removeObjectsInArray:toRemove];
+    }
+    [self.keysForSearch removeObjectsInArray:sectionsToRemove];
+    [self.tableView reloadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    NSLog(@"%@",[searchBar text]);
+    NSString *searchTerm = [self.searchBar text];
+    [self handleSearchForItem:searchTerm];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    NSLog(@"%@",self.searchBar.text);
+
+    if ([searchText length] == 0) {
+        [self resetSearch];
+        [self.tableView reloadData];
+        return;
+    }
+    [self handleSearchForItem:searchText];
 }
 
 @end

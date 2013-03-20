@@ -40,6 +40,11 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -79,6 +84,7 @@
     self.viewController = [self.viewControllers objectAtIndex:[indexPath row]];
     [self.navigationController pushViewController:self.viewController animated:YES];    
 }
+
 
 
 
