@@ -11,6 +11,8 @@
 		63023BEF16F59915000A83BE /* LZFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63023BED16F59915000A83BE /* LZFriendViewController.xib */; };
 		630CF5B316F748880082317E /* LZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630CF5B216F748880082317E /* LZViewController.xib */; };
 		6321CD0416F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6321CD0316F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m */; };
+		6321CD0916F9EEDC00E37EFD /* LZEventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6321CD0716F9EEDC00E37EFD /* LZEventsController.m */; };
+		6321CD0A16F9EEDC00E37EFD /* LZEventsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6321CD0816F9EEDC00E37EFD /* LZEventsController.xib */; };
 		636216E416F58F3E00BDEAF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E316F58F3E00BDEAF0 /* UIKit.framework */; };
 		636216E616F58F3E00BDEAF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E516F58F3E00BDEAF0 /* Foundation.framework */; };
 		636216E816F58F3E00BDEAF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E716F58F3E00BDEAF0 /* CoreGraphics.framework */; };
@@ -104,6 +106,9 @@
 		630CF5B216F748880082317E /* LZViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZViewController.xib; sourceTree = "<group>"; };
 		6321CD0216F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MutableDeepCopy.h"; sourceTree = "<group>"; };
 		6321CD0316F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MutableDeepCopy.m"; sourceTree = "<group>"; };
+		6321CD0616F9EEDC00E37EFD /* LZEventsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEventsController.h; sourceTree = "<group>"; };
+		6321CD0716F9EEDC00E37EFD /* LZEventsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEventsController.m; sourceTree = "<group>"; };
+		6321CD0816F9EEDC00E37EFD /* LZEventsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZEventsController.xib; sourceTree = "<group>"; };
 		636216E016F58F3E00BDEAF0 /* Renren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636216E316F58F3E00BDEAF0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		636216E516F58F3E00BDEAF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -264,6 +269,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6321CD0516F9EEC000E37EFD /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				6321CD0616F9EEDC00E37EFD /* LZEventsController.h */,
+				6321CD0716F9EEDC00E37EFD /* LZEventsController.m */,
+				6321CD0816F9EEDC00E37EFD /* LZEventsController.xib */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
 		636216D716F58F3E00BDEAF0 = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +586,7 @@
 		6385C40B16F88316005B6DF0 /* ViewAndViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6321CD0516F9EEC000E37EFD /* Events */,
 				6385C40C16F8834F005B6DF0 /* Friends */,
 				636216FB16F58F3E00BDEAF0 /* LZViewController.h */,
 				636216FC16F58F3E00BDEAF0 /* LZViewController.m */,
@@ -683,6 +699,7 @@
 				63023BEF16F59915000A83BE /* LZFriendViewController.xib in Resources */,
 				63CC93AC16F5D02D0090CAAF /* LZOptionViewController.xib in Resources */,
 				630CF5B316F748880082317E /* LZViewController.xib in Resources */,
+				6321CD0A16F9EEDC00E37EFD /* LZEventsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +766,7 @@
 				63CC93AB16F5D02D0090CAAF /* LZOptionViewController.m in Sources */,
 				6385C41016F88E1F005B6DF0 /* pinyin.c in Sources */,
 				6321CD0416F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m in Sources */,
+				6321CD0916F9EEDC00E37EFD /* LZEventsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

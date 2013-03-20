@@ -13,6 +13,8 @@
 @property (retain, nonatomic) ROUserResponseItem *friendsArray;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
+@property (retain, nonatomic) IBOutlet UIButton *finishButton;
+
 
 @property (nonatomic, retain) NSMutableArray *friendsList;
 @property (nonatomic, retain) NSMutableArray *friendsDictionary;
@@ -21,7 +23,9 @@
 @property (nonatomic, strong) NSMutableArray *keysForSearch;
 @property (nonatomic, strong) NSMutableDictionary *names;
 
+- (IBAction)backgroundTap:(id)sender;
 - (void)resetSearch;
 - (void)handleSearchForItem:(NSString *)item;
+- (IBAction)finishSearch:(id)sender;
 
 @end

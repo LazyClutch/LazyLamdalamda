@@ -37,14 +37,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.tableView setContentOffset:CGPointMake(0.0, 44.0) animated:NO];
+    [self.searchBar resignFirstResponder];
     [self.tableView reloadData];
-//    NSString *name = self.friendsArray.name;
-//    self.navigationController.title = name;
-//    NSURL *headUrl = [NSURL URLWithString:self.friendsArray.headUrl];
-//    NSData *data = [NSData dataWithContentsOfURL:headUrl];
-//    UIImage *headImage = [UIImage imageWithData:data];
-//    self.imageView.image = headImage;
+}
+
+- (IBAction)backgroundTap:(id)sender{
+    [self.searchBar resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,6 +60,7 @@
     self.searchBar = nil;
     self.names = nil;
     self.keys = nil;
+    [_finishButton release];
     [super dealloc];
 }
 
@@ -206,15 +205,16 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)finishSearch:(id)sender {
+    [self.searchBar resignFirstResponder];
+}
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    NSLog(@"%@",[searchBar text]);
     NSString *searchTerm = [self.searchBar text];
     [self handleSearchForItem:searchTerm];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    NSLog(@"%@",self.searchBar.text);
-
     if ([searchText length] == 0) {
         [self resetSearch];
         [self.tableView reloadData];
@@ -222,5 +222,7 @@
     }
     [self handleSearchForItem:searchText];
 }
+
+
 
 @end
