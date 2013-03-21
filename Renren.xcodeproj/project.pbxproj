@@ -95,7 +95,6 @@
 		636217D616F58F9800BDEAF0 /* ROPublishPhotoDialogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362178F16F58F9800BDEAF0 /* ROPublishPhotoDialogModel.m */; };
 		636217D716F58F9800BDEAF0 /* ROPublishPhotoInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362179116F58F9800BDEAF0 /* ROPublishPhotoInternal.m */; };
 		6385C41016F88E1F005B6DF0 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 6385C40F16F88E1F005B6DF0 /* pinyin.c */; };
-		63AB290A16FB1BD000A334C3 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB290916FB1BD000A334C3 /* PullRefreshTableViewController.m */; };
 		63CC93AB16F5D02D0090CAAF /* LZOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CC93A916F5D02D0090CAAF /* LZOptionViewController.m */; };
 		63CC93AC16F5D02D0090CAAF /* LZOptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63CC93AA16F5D02D0090CAAF /* LZOptionViewController.xib */; };
 /* End PBXBuildFile section */
@@ -250,8 +249,6 @@
 		6362179116F58F9800BDEAF0 /* ROPublishPhotoInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROPublishPhotoInternal.m; sourceTree = "<group>"; };
 		6385C40D16F88DC4005B6DF0 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		6385C40F16F88E1F005B6DF0 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
-		63AB290816FB1BD000A334C3 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
-		63AB290916FB1BD000A334C3 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
 		63CC93A816F5D02D0090CAAF /* LZOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZOptionViewController.h; sourceTree = "<group>"; };
 		63CC93A916F5D02D0090CAAF /* LZOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZOptionViewController.m; sourceTree = "<group>"; };
 		63CC93AA16F5D02D0090CAAF /* LZOptionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZOptionViewController.xib; sourceTree = "<group>"; };
@@ -616,8 +613,6 @@
 			children = (
 				6321CD0216F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.h */,
 				6321CD0316F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m */,
-				63AB290816FB1BD000A334C3 /* PullRefreshTableViewController.h */,
-				63AB290916FB1BD000A334C3 /* PullRefreshTableViewController.m */,
 				6385C40F16F88E1F005B6DF0 /* pinyin.c */,
 				6385C40D16F88DC4005B6DF0 /* pinyin.h */,
 			);
@@ -772,7 +767,6 @@
 				6385C41016F88E1F005B6DF0 /* pinyin.c in Sources */,
 				6321CD0416F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m in Sources */,
 				6321CD0916F9EEDC00E37EFD /* LZEventsController.m in Sources */,
-				63AB290A16FB1BD000A334C3 /* PullRefreshTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
