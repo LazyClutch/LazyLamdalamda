@@ -8,6 +8,7 @@
 
 #import "LZOptionViewController.h"
 #import "LZFriendViewController.h"
+#import "LZEventsController.h"
 
 @interface LZOptionViewController ()
 
@@ -28,13 +29,15 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"主菜单";
-    self.optionArray = @[@"好友列表"];
+    self.optionArray = @[@"好友列表",@"新鲜事"];
     
     NSMutableArray *controllers = [[[NSMutableArray alloc] init] autorelease];
     
     LZFriendViewController *friendsViewController = [[[LZFriendViewController alloc] initWithNibName:@"LZFriendViewController" bundle:nil]  autorelease];
     [controllers addObject:friendsViewController];
     
+    LZEventsController *eventsViewController = [[[LZEventsController alloc] initWithNibName:@"LZEventsController" bundle:nil] autorelease];
+    [controllers addObject:eventsViewController];
     
     self.viewControllers = controllers;
     // Do any additional setup after loading the view from its nib.

@@ -11,8 +11,6 @@
 		63023BEF16F59915000A83BE /* LZFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63023BED16F59915000A83BE /* LZFriendViewController.xib */; };
 		630CF5B316F748880082317E /* LZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630CF5B216F748880082317E /* LZViewController.xib */; };
 		6321CD0416F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6321CD0316F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m */; };
-		6321CD0916F9EEDC00E37EFD /* LZEventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6321CD0716F9EEDC00E37EFD /* LZEventsController.m */; };
-		6321CD0A16F9EEDC00E37EFD /* LZEventsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6321CD0816F9EEDC00E37EFD /* LZEventsController.xib */; };
 		636216E416F58F3E00BDEAF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E316F58F3E00BDEAF0 /* UIKit.framework */; };
 		636216E616F58F3E00BDEAF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E516F58F3E00BDEAF0 /* Foundation.framework */; };
 		636216E816F58F3E00BDEAF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E716F58F3E00BDEAF0 /* CoreGraphics.framework */; };
@@ -95,8 +93,12 @@
 		636217D616F58F9800BDEAF0 /* ROPublishPhotoDialogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362178F16F58F9800BDEAF0 /* ROPublishPhotoDialogModel.m */; };
 		636217D716F58F9800BDEAF0 /* ROPublishPhotoInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362179116F58F9800BDEAF0 /* ROPublishPhotoInternal.m */; };
 		6385C41016F88E1F005B6DF0 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 6385C40F16F88E1F005B6DF0 /* pinyin.c */; };
+		63AB291116FB1EB600A334C3 /* LZEventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB290F16FB1EB600A334C3 /* LZEventsController.m */; };
+		63AB291216FB1EB600A334C3 /* LZEventsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63AB291016FB1EB600A334C3 /* LZEventsController.xib */; };
+		63AB291416FB1F2100A334C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63AB291316FB1F2100A334C3 /* QuartzCore.framework */; };
 		63CC93AB16F5D02D0090CAAF /* LZOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CC93A916F5D02D0090CAAF /* LZOptionViewController.m */; };
 		63CC93AC16F5D02D0090CAAF /* LZOptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63CC93AA16F5D02D0090CAAF /* LZOptionViewController.xib */; };
+		63EFB21116FB356300E8DED0 /* LZShallowData.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EFB21016FB356300E8DED0 /* LZShallowData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,9 +108,6 @@
 		630CF5B216F748880082317E /* LZViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZViewController.xib; sourceTree = "<group>"; };
 		6321CD0216F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MutableDeepCopy.h"; sourceTree = "<group>"; };
 		6321CD0316F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MutableDeepCopy.m"; sourceTree = "<group>"; };
-		6321CD0616F9EEDC00E37EFD /* LZEventsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEventsController.h; sourceTree = "<group>"; };
-		6321CD0716F9EEDC00E37EFD /* LZEventsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEventsController.m; sourceTree = "<group>"; };
-		6321CD0816F9EEDC00E37EFD /* LZEventsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZEventsController.xib; sourceTree = "<group>"; };
 		636216E016F58F3E00BDEAF0 /* Renren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636216E316F58F3E00BDEAF0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		636216E516F58F3E00BDEAF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -249,9 +248,15 @@
 		6362179116F58F9800BDEAF0 /* ROPublishPhotoInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROPublishPhotoInternal.m; sourceTree = "<group>"; };
 		6385C40D16F88DC4005B6DF0 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		6385C40F16F88E1F005B6DF0 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
+		63AB290E16FB1EB600A334C3 /* LZEventsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEventsController.h; sourceTree = "<group>"; };
+		63AB290F16FB1EB600A334C3 /* LZEventsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEventsController.m; sourceTree = "<group>"; };
+		63AB291016FB1EB600A334C3 /* LZEventsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZEventsController.xib; sourceTree = "<group>"; };
+		63AB291316FB1F2100A334C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		63CC93A816F5D02D0090CAAF /* LZOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZOptionViewController.h; sourceTree = "<group>"; };
 		63CC93A916F5D02D0090CAAF /* LZOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZOptionViewController.m; sourceTree = "<group>"; };
 		63CC93AA16F5D02D0090CAAF /* LZOptionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZOptionViewController.xib; sourceTree = "<group>"; };
+		63EFB20F16FB356300E8DED0 /* LZShallowData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZShallowData.h; sourceTree = "<group>"; };
+		63EFB21016FB356300E8DED0 /* LZShallowData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZShallowData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63AB291416FB1F2100A334C3 /* QuartzCore.framework in Frameworks */,
 				6362170716F58F5800BDEAF0 /* libsqlite3.0.dylib in Frameworks */,
 				636216E416F58F3E00BDEAF0 /* UIKit.framework in Frameworks */,
 				636216E616F58F3E00BDEAF0 /* Foundation.framework in Frameworks */,
@@ -272,9 +278,9 @@
 		6321CD0516F9EEC000E37EFD /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				6321CD0616F9EEDC00E37EFD /* LZEventsController.h */,
-				6321CD0716F9EEDC00E37EFD /* LZEventsController.m */,
-				6321CD0816F9EEDC00E37EFD /* LZEventsController.xib */,
+				63AB290E16FB1EB600A334C3 /* LZEventsController.h */,
+				63AB290F16FB1EB600A334C3 /* LZEventsController.m */,
+				63AB291016FB1EB600A334C3 /* LZEventsController.xib */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 		636216D716F58F3E00BDEAF0 = {
 			isa = PBXGroup;
 			children = (
+				63AB291316FB1F2100A334C3 /* QuartzCore.framework */,
 				636216E916F58F3E00BDEAF0 /* Renren */,
 				636216E216F58F3E00BDEAF0 /* Frameworks */,
 				636216E116F58F3E00BDEAF0 /* Products */,
@@ -309,6 +316,7 @@
 		636216E916F58F3E00BDEAF0 /* Renren */ = {
 			isa = PBXGroup;
 			children = (
+				63EFB20E16FB352700E8DED0 /* Data */,
 				6385C40E16F88DC9005B6DF0 /* Library */,
 				6385C40B16F88316005B6DF0 /* ViewAndViewController */,
 				636216F216F58F3E00BDEAF0 /* LZAppDelegate.h */,
@@ -619,6 +627,15 @@
 			name = Library;
 			sourceTree = "<group>";
 		};
+		63EFB20E16FB352700E8DED0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				63EFB20F16FB356300E8DED0 /* LZShallowData.h */,
+				63EFB21016FB356300E8DED0 /* LZShallowData.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -699,7 +716,7 @@
 				63023BEF16F59915000A83BE /* LZFriendViewController.xib in Resources */,
 				63CC93AC16F5D02D0090CAAF /* LZOptionViewController.xib in Resources */,
 				630CF5B316F748880082317E /* LZViewController.xib in Resources */,
-				6321CD0A16F9EEDC00E37EFD /* LZEventsController.xib in Resources */,
+				63AB291216FB1EB600A334C3 /* LZEventsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,7 +783,8 @@
 				63CC93AB16F5D02D0090CAAF /* LZOptionViewController.m in Sources */,
 				6385C41016F88E1F005B6DF0 /* pinyin.c in Sources */,
 				6321CD0416F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m in Sources */,
-				6321CD0916F9EEDC00E37EFD /* LZEventsController.m in Sources */,
+				63AB291116FB1EB600A334C3 /* LZEventsController.m in Sources */,
+				63EFB21116FB356300E8DED0 /* LZShallowData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
