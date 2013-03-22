@@ -11,6 +11,15 @@
 		63023BEF16F59915000A83BE /* LZFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63023BED16F59915000A83BE /* LZFriendViewController.xib */; };
 		630CF5B316F748880082317E /* LZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630CF5B216F748880082317E /* LZViewController.xib */; };
 		6321CD0416F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6321CD0316F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m */; };
+		634E664116FBF16A00711228 /* JSCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E663E16FBF16A00711228 /* JSCoreTextView.m */; };
+		634E664216FBF16A00711228 /* JSTwitterCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E664016FBF16A00711228 /* JSTwitterCoreTextView.m */; };
+		634E665516FBF31A00711228 /* AHHyperlinkScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E664F16FBF31A00711228 /* AHHyperlinkScanner.m */; };
+		634E665616FBF31A00711228 /* AHLinkLexer.l in Sources */ = {isa = PBXBuildFile; fileRef = 634E665116FBF31A00711228 /* AHLinkLexer.l */; };
+		634E665716FBF31A00711228 /* AHMarkedHyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E665316FBF31A00711228 /* AHMarkedHyperlink.m */; };
+		634E665E16FBF3FC00711228 /* LZEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634E665D16FBF3FB00711228 /* LZEventCell.xib */; };
+		634E666116FBF61200711228 /* LZEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E666016FBF61200711228 /* LZEventCell.m */; };
+		634E666316FBFEA300711228 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634E666216FBFEA300711228 /* CoreText.framework */; };
+		634E666516FC032B00711228 /* LZEventsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634E666416FC032B00711228 /* LZEventsController.xib */; };
 		636216E416F58F3E00BDEAF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E316F58F3E00BDEAF0 /* UIKit.framework */; };
 		636216E616F58F3E00BDEAF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E516F58F3E00BDEAF0 /* Foundation.framework */; };
 		636216E816F58F3E00BDEAF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E716F58F3E00BDEAF0 /* CoreGraphics.framework */; };
@@ -94,7 +103,6 @@
 		636217D716F58F9800BDEAF0 /* ROPublishPhotoInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362179116F58F9800BDEAF0 /* ROPublishPhotoInternal.m */; };
 		6385C41016F88E1F005B6DF0 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 6385C40F16F88E1F005B6DF0 /* pinyin.c */; };
 		63AB291116FB1EB600A334C3 /* LZEventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB290F16FB1EB600A334C3 /* LZEventsController.m */; };
-		63AB291216FB1EB600A334C3 /* LZEventsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63AB291016FB1EB600A334C3 /* LZEventsController.xib */; };
 		63AB291416FB1F2100A334C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63AB291316FB1F2100A334C3 /* QuartzCore.framework */; };
 		63CC93AB16F5D02D0090CAAF /* LZOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CC93A916F5D02D0090CAAF /* LZOptionViewController.m */; };
 		63CC93AC16F5D02D0090CAAF /* LZOptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63CC93AA16F5D02D0090CAAF /* LZOptionViewController.xib */; };
@@ -108,6 +116,22 @@
 		630CF5B216F748880082317E /* LZViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZViewController.xib; sourceTree = "<group>"; };
 		6321CD0216F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MutableDeepCopy.h"; sourceTree = "<group>"; };
 		6321CD0316F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MutableDeepCopy.m"; sourceTree = "<group>"; };
+		634E663D16FBF16A00711228 /* JSCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCoreTextView.h; sourceTree = "<group>"; };
+		634E663E16FBF16A00711228 /* JSCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCoreTextView.m; sourceTree = "<group>"; };
+		634E663F16FBF16A00711228 /* JSTwitterCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTwitterCoreTextView.h; sourceTree = "<group>"; };
+		634E664016FBF16A00711228 /* JSTwitterCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTwitterCoreTextView.m; sourceTree = "<group>"; };
+		634E664E16FBF31A00711228 /* AHHyperlinkScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHHyperlinkScanner.h; sourceTree = "<group>"; };
+		634E664F16FBF31A00711228 /* AHHyperlinkScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHHyperlinkScanner.m; sourceTree = "<group>"; };
+		634E665016FBF31A00711228 /* AHLinkLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHLinkLexer.h; sourceTree = "<group>"; };
+		634E665116FBF31A00711228 /* AHLinkLexer.l */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = AHLinkLexer.l; sourceTree = "<group>"; };
+		634E665216FBF31A00711228 /* AHMarkedHyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHMarkedHyperlink.h; sourceTree = "<group>"; };
+		634E665316FBF31A00711228 /* AHMarkedHyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHMarkedHyperlink.m; sourceTree = "<group>"; };
+		634E665416FBF31A00711228 /* AutoHyperlinks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoHyperlinks.h; sourceTree = "<group>"; };
+		634E665D16FBF3FB00711228 /* LZEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZEventCell.xib; sourceTree = "<group>"; };
+		634E665F16FBF61200711228 /* LZEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LZEventCell.h; path = ../LZEventCell.h; sourceTree = "<group>"; };
+		634E666016FBF61200711228 /* LZEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LZEventCell.m; path = ../LZEventCell.m; sourceTree = "<group>"; };
+		634E666216FBFEA300711228 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		634E666416FC032B00711228 /* LZEventsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZEventsController.xib; sourceTree = "<group>"; };
 		636216E016F58F3E00BDEAF0 /* Renren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636216E316F58F3E00BDEAF0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		636216E516F58F3E00BDEAF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -250,7 +274,6 @@
 		6385C40F16F88E1F005B6DF0 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
 		63AB290E16FB1EB600A334C3 /* LZEventsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEventsController.h; sourceTree = "<group>"; };
 		63AB290F16FB1EB600A334C3 /* LZEventsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEventsController.m; sourceTree = "<group>"; };
-		63AB291016FB1EB600A334C3 /* LZEventsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZEventsController.xib; sourceTree = "<group>"; };
 		63AB291316FB1F2100A334C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		63CC93A816F5D02D0090CAAF /* LZOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZOptionViewController.h; sourceTree = "<group>"; };
 		63CC93A916F5D02D0090CAAF /* LZOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZOptionViewController.m; sourceTree = "<group>"; };
@@ -264,6 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634E666316FBFEA300711228 /* CoreText.framework in Frameworks */,
 				63AB291416FB1F2100A334C3 /* QuartzCore.framework in Frameworks */,
 				6362170716F58F5800BDEAF0 /* libsqlite3.0.dylib in Frameworks */,
 				636216E416F58F3E00BDEAF0 /* UIKit.framework in Frameworks */,
@@ -280,14 +304,32 @@
 			children = (
 				63AB290E16FB1EB600A334C3 /* LZEventsController.h */,
 				63AB290F16FB1EB600A334C3 /* LZEventsController.m */,
-				63AB291016FB1EB600A334C3 /* LZEventsController.xib */,
+				634E666416FC032B00711228 /* LZEventsController.xib */,
+				634E665F16FBF61200711228 /* LZEventCell.h */,
+				634E666016FBF61200711228 /* LZEventCell.m */,
+				634E665D16FBF3FB00711228 /* LZEventCell.xib */,
 			);
 			name = Events;
+			sourceTree = "<group>";
+		};
+		634E664316FBF26800711228 /* AutoTypeLinks */ = {
+			isa = PBXGroup;
+			children = (
+				634E664E16FBF31A00711228 /* AHHyperlinkScanner.h */,
+				634E664F16FBF31A00711228 /* AHHyperlinkScanner.m */,
+				634E665016FBF31A00711228 /* AHLinkLexer.h */,
+				634E665116FBF31A00711228 /* AHLinkLexer.l */,
+				634E665216FBF31A00711228 /* AHMarkedHyperlink.h */,
+				634E665316FBF31A00711228 /* AHMarkedHyperlink.m */,
+				634E665416FBF31A00711228 /* AutoHyperlinks.h */,
+			);
+			name = AutoTypeLinks;
 			sourceTree = "<group>";
 		};
 		636216D716F58F3E00BDEAF0 = {
 			isa = PBXGroup;
 			children = (
+				634E666216FBFEA300711228 /* CoreText.framework */,
 				63AB291316FB1F2100A334C3 /* QuartzCore.framework */,
 				636216E916F58F3E00BDEAF0 /* Renren */,
 				636216E216F58F3E00BDEAF0 /* Frameworks */,
@@ -619,6 +661,11 @@
 		6385C40E16F88DC9005B6DF0 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				634E664316FBF26800711228 /* AutoTypeLinks */,
+				634E663D16FBF16A00711228 /* JSCoreTextView.h */,
+				634E663E16FBF16A00711228 /* JSCoreTextView.m */,
+				634E663F16FBF16A00711228 /* JSTwitterCoreTextView.h */,
+				634E664016FBF16A00711228 /* JSTwitterCoreTextView.m */,
 				6321CD0216F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.h */,
 				6321CD0316F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m */,
 				6385C40F16F88E1F005B6DF0 /* pinyin.c */,
@@ -716,7 +763,8 @@
 				63023BEF16F59915000A83BE /* LZFriendViewController.xib in Resources */,
 				63CC93AC16F5D02D0090CAAF /* LZOptionViewController.xib in Resources */,
 				630CF5B316F748880082317E /* LZViewController.xib in Resources */,
-				63AB291216FB1EB600A334C3 /* LZEventsController.xib in Resources */,
+				634E665E16FBF3FC00711228 /* LZEventCell.xib in Resources */,
+				634E666516FC032B00711228 /* LZEventsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,6 +833,12 @@
 				6321CD0416F9CEF800E37EFD /* NSDictionary+MutableDeepCopy.m in Sources */,
 				63AB291116FB1EB600A334C3 /* LZEventsController.m in Sources */,
 				63EFB21116FB356300E8DED0 /* LZShallowData.m in Sources */,
+				634E664116FBF16A00711228 /* JSCoreTextView.m in Sources */,
+				634E664216FBF16A00711228 /* JSTwitterCoreTextView.m in Sources */,
+				634E665516FBF31A00711228 /* AHHyperlinkScanner.m in Sources */,
+				634E665616FBF31A00711228 /* AHLinkLexer.l in Sources */,
+				634E665716FBF31A00711228 /* AHMarkedHyperlink.m in Sources */,
+				634E666116FBF61200711228 /* LZEventCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
