@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PopoverView.h"
 
-@interface LZEventsController : UIViewController <RenrenDelegate,UITableViewDataSource,UITableViewDelegate>
+
+@interface LZEventsController : UIViewController <RenrenDelegate,UITableViewDataSource,UITableViewDelegate,PopoverViewDelegate>
 
 @property (nonatomic, strong) NSArray *statusList;
-@property (retain, nonatomic) IBOutlet UITabBar *tabBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UIButton *eventPushButton;
 
 
 - (IBAction)refreshButtonTapped:(id)sender;
+- (IBAction)pushEvent:(id)sender;
 
 @end

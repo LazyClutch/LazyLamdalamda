@@ -23,5 +23,6 @@
 @property (retain, nonatomic) IBOutlet UITextView *userStatusTimeText;
 
 - (void)setProperty;
++ (CGRect)adjustHeightInTextView:(CGRect)rect WithText:(NSString *)text;
 
 @end

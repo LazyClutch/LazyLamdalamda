@@ -23,7 +23,11 @@
     self.userStatusText.editable = NO;
     self.userNameText.editable = NO;
     self.userStatusTimeText.editable = NO;
-    self.userStatusText.backgroundColor = [UIColor grayColor];
+    
+    //self.userStatusText.backgroundColor = [UIColor grayColor];
+    self.userNameText.scrollEnabled = NO;
+    self.userStatusText.scrollEnabled = NO;
+    self.userStatusTimeText.scrollEnabled = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -42,12 +46,12 @@
     [super dealloc];
 }
 
-+ (CGRect)adjustHeightInTextView:(UITextView *)noteTextView WithText:(NSString *)text{
-    CGRect frame = noteTextView.frame;
-    CGSize size = [noteTextView.text sizeWithFont:noteTextView.font
++ (CGRect)adjustHeightInTextView:(CGRect)rect WithText:(NSString *)text{
+    UITextView *noteTextView = [[UITextView alloc] initWithFrame:rect];
+    CGSize size = [text sizeWithFont:noteTextView.font
                                 constrainedToSize:CGSizeMake(100, 100)
                                     lineBreakMode:NSLineBreakByTruncatingTail];
-    frame.size.height = size.height > 1 ? size.height + 20 : 64;
-    return frame;
+    rect.size.height = size.height > 1 ? size.height + 20 : 64;
+    return rect;
 }
 @end

@@ -8,6 +8,8 @@
 
 #import "LZEventsController.h"
 #import "LZEventCell.h"
+#import "PopoverView.h"
+#import "LZEventPushView.h"
 
 @interface LZEventsController ()
 
@@ -30,18 +32,33 @@
     self.navigationItem.title = @"新鲜事";
     UIBarButtonItem *rightButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain target:self action:@selector(refreshButtonTapped:)] autorelease];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
+//    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
+//    [self.segmentControl addGestureRecognizer:tapRecognizer];
     [self getFeed];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)dealloc {
-    [_tabBar release];
+    [_eventPushButton release];
     [_tableView release];
+    [_eventPushButton release];
     [super dealloc];
 }
 
 - (void)renren:(Renren *)renren requestDidReturnResponse:(ROResponse *)response{
     NSMutableArray *statusArray = (NSMutableArray *)response.rootObject;
+//    for (NSMutableDictionary *dict in statusArray) {
+//        CGRect constFrame = CGRectMake(52, 47, 248, 100);
+//        CGRect frame = [LZEventCell adjustHeightInTextView:constFrame WithText:[dict objectForKey:@"message"]];
+//        NSString *textHeightStr = [NSString stringWithFormat:@"%f",frame.size.height];
+//        [dict setObject:textHeightStr forKey:@"textHeight"];
+//        NSInteger currHeight = frame.size.height;
+//        NSInteger deltaHeight = currHeight + 96;
+//        NSString *heightStr = [NSString stringWithFormat:@"%d",deltaHeight];
+//        [dict setObject:heightStr forKey:@"height"];
+//        NSLog(@"%@suppose:%@",[dict objectForKey:@"message"],textHeightStr);
+//        //NSLog(@"%@",heightStr);
+//    }
     self.statusList = statusArray;
     [self.tableView reloadData];
 
@@ -66,6 +83,7 @@
 
 #pragma mark-
 #pragma mark Table View Methods
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -83,19 +101,18 @@
         nibsRegistered = YES;
     }
     LZEventCell *cell = [tableView dequeueReusableCellWithIdentifier:StatusCellIdentifier];
-    NSDictionary *oneStatus = [self.statusList objectAtIndex:[indexPath row]];
-    NSURL *headUrl = [NSURL URLWithString:[oneStatus objectForKey:@"headurl"]];
-    NSData *data = [NSData dataWithContentsOfURL:headUrl];
-    UIImage *headImage = [UIImage imageWithData:data];
     [cell setProperty];
-    cell.userHeadImage.image = headImage;
-    cell.userNameText.text = [oneStatus objectForKey:@"name"];
-    cell.userStatusText.text = [oneStatus objectForKey:@"message"];
-    cell.userStatusTimeText.text = [oneStatus objectForKey:@"update_time"];
+    NSMutableDictionary *oneStatus = [self.statusList objectAtIndex:[indexPath row]];
+    [self updateCell:cell withStatus:oneStatus];
+    //CGRect newRect = CGRectMake(0, 0, 320, 195 + currHeight);
     return cell;
 }
 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    NSMutableDictionary *oneStatus = [self.statusList objectAtIndex:[indexPath row]];
+//    NSString *heightStr = [oneStatus objectForKey:@"height"];
+//    NSInteger height = [heightStr integerValue];
     return 195;
 }
 
@@ -103,7 +120,50 @@
     
 }
 
+- (IBAction)pushEvent:(id)sender {
+    CGPoint point = CGPointMake(155, 25);
+    CGRect rect = CGRectMake(155, 25, 240, 120);
+
+    LZEventPushView *pushView = [[LZEventPushView alloc] initWithFrame:rect];
+    [PopoverView showPopoverAtPoint:point inView:self.view withTitle:@"发条新鲜事" withContentView:pushView delegate:self];
+
+}
+
+
+- (void)updateCell:(LZEventCell *)cell withStatus:(NSDictionary *)oneStatus{
+    
+    //set head image
+    NSURL *headUrl = [NSURL URLWithString:[oneStatus objectForKey:@"headurl"]];
+    NSData *data = [NSData dataWithContentsOfURL:headUrl];
+    UIImage *headImage = [UIImage imageWithData:data];
+    cell.userHeadImage.image = headImage;
+    
+    //set text
+    cell.userNameText.text = [oneStatus objectForKey:@"name"];
+    cell.userStatusText.text = [oneStatus objectForKey:@"prefix"];
+    cell.userStatusTimeText.text = [oneStatus objectForKey:@"update_time"];
+    
+//    //adjust height
+//    NSString *textStrHeight = [oneStatus objectForKey:@"textHeight"];
+//    NSInteger textHeight = [textStrHeight integerValue];
+//    CGRect textRect = CGRectMake(52, 47, 248, textHeight);
+//    //NSLog(@"%f",cell.userStatusText.frame.size.height);
+//    [cell.userStatusText setFrame:textRect];
+//    NSLog(@"%@actually:%f",[oneStatus objectForKey:@"message"],cell.userStatusText.frame.size.height);
+//    
+//    NSString *heightStr = [oneStatus objectForKey:@"height"];
+//    NSInteger height = [heightStr integerValue];
+//    
+//    CGRect textTimeRect = CGRectMake(52, height - 12, cell.userStatusTimeText.frame.size.width, cell.userStatusTimeText.frame.size.height);
+//    [cell.userStatusTimeText setFrame:textTimeRect];
+
+}
 
 
 
+
+- (void)viewDidUnload {
+    [self setEventPushButton:nil];
+    [super viewDidUnload];
+}
 @end
