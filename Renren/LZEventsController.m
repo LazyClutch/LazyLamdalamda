@@ -10,6 +10,7 @@
 #import "LZEventCell.h"
 #import "PopoverView.h"
 #import "LZEventPushView.h"
+#import "EGORefreshTableHeaderView.h"
 
 @interface LZEventsController ()
 
@@ -29,11 +30,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    isLoding = NO;
+    
+    //initial pull refresh
+    if (self.pullRefreshTableView == nil) {
+		CGRect rect = CGRectMake(0, -35, 320, 34);
+		EGORefreshTableHeaderView *view = [[[EGORefreshTableHeaderView alloc] initWithFrame:rect] autorelease];
+		view.delegate = self;
+		[self.tableView addSubview:view];
+        self.pullRefreshTableView = view;
+	}
+    
+    
+    //set UI
     self.navigationItem.title = @"新鲜事";
     UIBarButtonItem *rightButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain target:self action:@selector(refreshButtonTapped:)] autorelease];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
+    
+    
 //    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
 //    [self.segmentControl addGestureRecognizer:tapRecognizer];
+    
+    //load data
+    [self.pullRefreshTableView refreshLastUpdatedDate];
     [self getFeed];
     // Do any additional setup after loading the view from its nib.
 }
@@ -160,10 +179,74 @@
 }
 
 
-
-
 - (void)viewDidUnload {
     [self setEventPushButton:nil];
     [super viewDidUnload];
 }
+
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource{
+	
+	//  should be calling your tableviews data source model to reload
+	//  put here just for demo
+	isLoding = YES;
+    [NSThread detachNewThreadSelector:@selector(doInBackground) toTarget:self withObject:nil];
+
+	
+}
+
+- (void)doneLoadingTableViewData{
+	
+	//  model should call this when its done loading
+	isLoding = NO;
+	[self.pullRefreshTableView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+	
+}
+
+- (void)doInBackground{
+    [self getFeed];
+    [self performSelectorOnMainThread:@selector(doneLoadingTableViewData) withObject:nil waitUntilDone:YES];
+}
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+	
+	[self.pullRefreshTableView egoRefreshScrollViewDidScroll:scrollView];    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	[self.pullRefreshTableView egoRefreshScrollViewDidEndDragging:scrollView];
+	
+}
+
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+	
+	[self reloadTableViewDataSource];
+    [NSThread sleepForTimeInterval:1];
+	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:0.0];
+	
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+	
+	return isLoding; // should return if data source model is reloading
+	
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
+}
+
 @end

@@ -20,6 +20,7 @@
 		634E666116FBF61200711228 /* LZEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 634E666016FBF61200711228 /* LZEventCell.m */; };
 		634E666316FBFEA300711228 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634E666216FBFEA300711228 /* CoreText.framework */; };
 		634E666516FC032B00711228 /* LZEventsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634E666416FC032B00711228 /* LZEventsController.xib */; };
+		6352AC6C16FF2BFD007B9F2F /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6352AC6B16FF2BFD007B9F2F /* EGORefreshTableHeaderView.m */; };
 		636216E416F58F3E00BDEAF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E316F58F3E00BDEAF0 /* UIKit.framework */; };
 		636216E616F58F3E00BDEAF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E516F58F3E00BDEAF0 /* Foundation.framework */; };
 		636216E816F58F3E00BDEAF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636216E716F58F3E00BDEAF0 /* CoreGraphics.framework */; };
@@ -134,6 +135,8 @@
 		634E666016FBF61200711228 /* LZEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LZEventCell.m; path = ../LZEventCell.m; sourceTree = "<group>"; };
 		634E666216FBFEA300711228 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		634E666416FC032B00711228 /* LZEventsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZEventsController.xib; sourceTree = "<group>"; };
+		6352AC6A16FF2BFD007B9F2F /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		6352AC6B16FF2BFD007B9F2F /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		636216E016F58F3E00BDEAF0 /* Renren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636216E316F58F3E00BDEAF0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		636216E516F58F3E00BDEAF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -669,6 +672,8 @@
 		6385C40E16F88DC9005B6DF0 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				6352AC6A16FF2BFD007B9F2F /* EGORefreshTableHeaderView.h */,
+				6352AC6B16FF2BFD007B9F2F /* EGORefreshTableHeaderView.m */,
 				636CCCA316FECA4800568BFB /* PopoverView.h */,
 				636CCCA416FECA4800568BFB /* PopoverView.m */,
 				634E664316FBF26800711228 /* AutoTypeLinks */,
@@ -851,6 +856,7 @@
 				634E666116FBF61200711228 /* LZEventCell.m in Sources */,
 				636CCCA516FECA4800568BFB /* PopoverView.m in Sources */,
 				636CCCAD16FECD0300568BFB /* LZEventPushView.m in Sources */,
+				6352AC6C16FF2BFD007B9F2F /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
